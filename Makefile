@@ -1,6 +1,6 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -std=c99 -D_DEFAULT_SOURCE -D_POSIX_C_SOURCE=200809L
-FILE ?= main
+FILE ?= myFile
 
 TARGET_FILE = $(FILE)
 SRCS_FILE = $(FILE).c
