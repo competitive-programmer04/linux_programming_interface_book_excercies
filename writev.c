@@ -14,7 +14,7 @@ ssize_t my_writev(int fd, struct iovec *iov, int iovcount){
     size_t prev_bytes_write = 0;
     for(int i=0; i<iovcount; ++i){
         memcpy(large_buffer + prev_bytes_write, iov[i].iov_base, iov[i].iov_len);
-        prev_bytes_write = prev_bytes_write + iov[i].iov_len;
+        prev_bytes_write = prev_bytes_write + iov[i].iov_len - 1;
     }
     large_buffer[len] = '\0';
     ssize_t bytes_write = write(fd, large_buffer, len);
