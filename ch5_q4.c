@@ -6,7 +6,7 @@
 int my_dup(int old_fd){
     int flags = fcntl(old_fd, F_GETFL);
     if(flags == -1){
-        fprintf(stderr, "%d is invalid file descriptor\n", old_fd);
+        fprintf(stderr, "%d is bad file descriptor\n", old_fd);
         errno = EBADF;
         return -1;
     }
